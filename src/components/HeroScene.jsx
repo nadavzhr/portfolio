@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -71,7 +71,7 @@ const HeroScene = () => {
       size: 0.05,
       sizeAttenuation: true,
       transparent: true,
-      alphaMap: new THREE.TextureLoader().load('/particle.png'),
+      opacity: 0.8,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       vertexColors: true

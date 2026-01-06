@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -12,14 +11,6 @@ import ScrollAnimator from './components/ScrollAnimator'
 import QuirkyChat from './components/QuirkyChat'
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Add animation after initial load
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 300);
-  }, []);
 
   return (
     <AnimatePresence>
@@ -27,10 +18,7 @@ function App() {
         {/* Particle background with higher z-index to ensure visibility across all sections */}
         <ParticleBackground />
         
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+        <div 
           className="min-h-screen flex flex-col bg-transparent relative z-10"
         >
           <Header />
@@ -44,7 +32,7 @@ function App() {
             </main>
           </ScrollAnimator>
           <Footer />
-        </motion.div>
+        </div>
         
         {/* Interactive chat component */}
         <QuirkyChat />
