@@ -18,7 +18,7 @@ const ScrollAnimator = ({ children }) => {
     const sections = gsap.utils.toArray('.scroll-section');
     
     // Create ScrollTrigger for each section
-    sections.forEach((section, index) => {
+    sections.forEach((section) => {
       const title = section.querySelector('.section-title');
       const content = section.querySelector('.section-content');
       
@@ -81,7 +81,6 @@ const ScrollAnimator = ({ children }) => {
     // Create a horizontal scroll effect for project section
     const horizontalSection = document.querySelector('.horizontal-scroll');
     if (horizontalSection) {
-      const container = horizontalSection.querySelector('.horizontal-container');
       const items = gsap.utils.toArray('.horizontal-item');
       
       gsap.to(items, {
